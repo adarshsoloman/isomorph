@@ -1,0 +1,31 @@
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: isomorph_db
+    environment:
+      POSTGRES_USER: isomorph
+      POSTGRES_PASSWORD: qwerty12345
+      POSTGRES_DB: isomorph_db
+    ports:
+      - "5433:5432" # Map host 5433 to container 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U isomorph -d isomorph_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:alpine
+    container_name: isomorph_cache
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
