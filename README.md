@@ -100,4 +100,4 @@ A successful run returns:
 ---
 
 ## 📜 License
-MIT — Created by Adarsh Solomon (2026)
+Apache-2.0 — Created by Adarsh Solomon (2026)
