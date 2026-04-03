@@ -8,20 +8,20 @@ class Method(Base):
     __tablename__ = "methods"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    name = Column(String(255), nullable=False, unique=True)
+    name = Column(Text, nullable=False, unique=True)
     aliases = Column(ARRAY(String), default=[])
-    origin_domain = Column(String(255), nullable=False)
+    origin_domain = Column(Text, nullable=False)
     appears_in = Column(ARRAY(String), default=[])
     mathematical_core = Column(Text, nullable=False)
-    problem_class = Column(String(255), nullable=False) # optimization / inference / simulation / classification
-    equation_class = Column(String(255), nullable=False) # differential / algebraic / probabilistic / geometric
-    constraint_type = Column(String(255), nullable=False) # physical laws / boundary conditions / conservation laws
+    problem_class = Column(Text, nullable=False) # optimization / inference / simulation / classification
+    equation_class = Column(Text, nullable=False) # differential / algebraic / probabilistic / geometric
+    constraint_type = Column(Text, nullable=False) # physical laws / boundary conditions / conservation laws
     cross_domain_example_1 = Column(Text)
     cross_domain_example_2 = Column(Text)
     where_analogy_breaks = Column(Text, nullable=False)
     assumptions = Column(ARRAY(String), default=[])
     runnable = Column(Boolean, default=False)
-    python_implementation = Column(String(255))
+    python_implementation = Column(Text)
     tags = Column(ARRAY(String), default=[])
     embedding = Column(Vector(384)) # matches sentence-transformers all-MiniLM-L6-v2
     complexity_level = Column(String(50)) # basic / intermediate / advanced

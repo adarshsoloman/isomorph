@@ -13,11 +13,26 @@ class Extractor:
         Extract structured data from raw research text using Groq.
         Retries once on invalid JSON/validation failure.
         """
+        schema_info = (
+            "JSON SCHEMA:\n"
+            "{\n"
+            "  \"objective\": \"string\",\n"
+            "  \"variables\": [\"string\"],\n"
+            "  \"constraints\": [\"string\"],\n"
+            "  \"system_type\": \"deterministic\" | \"stochastic\" | \"hybrid\",\n"
+            "  \"equation_form\": \"string\",\n"
+            "  \"optimization_type\": \"min\" | \"max\" | \"equilibrium\" | \"unknown\",\n"
+            "  \"problem_class\": \"differential equation\" | \"optimization\" | \"inference\" | \"simulation\",\n"
+            "  \"domain_hint\": \"string (optional)\"\n"
+            "}"
+        )
+
         system_prompt = (
             "You are a structural analyst for scientific problems. "
             "Your goal is to extract the underlying mathematical and system structure "
-            "from a researcher's problem description. "
-            "Return ONLY valid JSON matching the provided schema."
+            "from a researcher's problem description.\n\n"
+            f"{schema_info}\n\n"
+            "CRITICAL: Use ONLY the allowed values for literal fields. Return ONLY valid JSON."
         )
         
         user_prompt = f"Problem description: {input_text}\n\nReturn structure JSON:"

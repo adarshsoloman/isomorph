@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# uv
+uv.lock
+.python-version
+pyproject.toml
+
+# Project specific
+outputs/
+ml-model-debugger/data/sample_regression.csv
+PRD.md
+timestamp.md
+data/
+scripts/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+

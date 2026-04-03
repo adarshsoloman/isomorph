@@ -6,6 +6,7 @@ from .extractor import extractor
 from .embedder import embedder
 from .matcher import matcher
 from .scorer import scorer
+from .primitive_fetcher import primitive_fetcher
 from ..schemas.analogy import AnalysisResponse, ScoredAnalogy
 from ..config import settings
 
@@ -47,8 +48,8 @@ class Pipeline:
         for method in matches:
             analogy = scorer.score_analogy(input_text, extracted_structure, method)
             if analogy and analogy.similarity_score >= settings.MIN_SIMILARITY_SCORE:
-                # 6. PRIMITIVE FETCHER (Mock implementation for now)
-                # In full build, this looks up the registry
+                # 6. PRIMITIVE FETCHER
+                analogy.primitive = primitive_fetcher.fetch_for_method(method.name)
                 scored_analogies.append(analogy)
 
         response.analogies = scored_analogies

@@ -69,3 +69,10 @@ backend/alembic/versions/*.pyc
 PRD.md
 timestamp.md
 test_db_conn.py
+isomorph_monolithic_console.md
+
+# Data and Knowledge Base
+data/
+
+# Seed Data
+backend/app/db/seed/seed_data_batch*.json

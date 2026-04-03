@@ -21,10 +21,25 @@ class Scorer:
         Compare a research problem to a candidate method using Groq.
         Produces a similarity score, mapping, and failure conditions.
         """
+        schema_info = (
+            "JSON SCHEMA:\n"
+            "{\n"
+            "  \"similarity_score\": float (0.0 to 1.0),\n"
+            "  \"mapping\": {\n"
+            "    \"variable_mapping\": {\"user_var\": \"method_var\", ...},\n"
+            "    \"constraint_mapping\": {\"user_constraint\": \"method_constraint\", ...}\n"
+            "  },\n"
+            "  \"transferable_aspects\": [\"string\"],\n"
+            "  \"non_transferable_aspects\": [\"string\"],\n"
+            "  \"failure_conditions\": [\"string\"]\n"
+            "}"
+        )
+
         system_prompt = (
-            "You are a scientific analogy expert. Compare the research problem to "
-            "the mathematical method provided. Focus on structural isomorphism, not jargon."
-            "Return ONLY valid JSON matching the ScoredAnalogy schema."
+            "You are a scientific analogy expert. Your goal is to map a researcher's problem "
+            "to a known mathematical method. Focus on structural isomorphism, not jargon.\n\n"
+            f"{schema_info}\n\n"
+            "CRITICAL: The 'mapping' field is mandatory. Return ONLY valid JSON."
         )
 
         user_prompt = (

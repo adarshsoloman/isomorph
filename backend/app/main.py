@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
-from .api.routes import analyze, health
+from .api.routes import analyze, health, primitives
 
 def get_application() -> FastAPI:
     application = FastAPI(
@@ -22,6 +22,7 @@ def get_application() -> FastAPI:
     # Register Routes
     application.include_router(analyze.router, prefix="/analyze", tags=["analysis"])
     application.include_router(health.router, prefix="/health", tags=["system"])
+    application.include_router(primitives.router, prefix="/primitives", tags=["primitives"])
 
     return application
 
