@@ -23,7 +23,7 @@ class Method(Base):
     runnable = Column(Boolean, default=False)
     python_implementation = Column(Text)
     tags = Column(ARRAY(String), default=[])
-    embedding = Column(Vector(384)) # matches sentence-transformers all-MiniLM-L6-v2
+    embedding = Column(Vector(768)) # matches Nomic Embed Text v1.5 (768-dim)
     complexity_level = Column(String(50)) # basic / intermediate / advanced
     typical_use_cases = Column(ARRAY(String), default=[])
     known_limitations = Column(ARRAY(String), default=[])

@@ -25,6 +25,18 @@ class Pipeline:
         try:
             extracted_structure = extractor.extract(input_text)
             response.extracted_structure = extracted_structure
+            
+            # EARLY EXIT GATE
+            if not extracted_structure.is_scientific:
+                response.errors.append(f"rejected: {extracted_structure.rejection_reason or 'Input is not a scientific problem.'}")
+                return self._finalize(response, start_time)
+                
+            if extracted_structure.structure_confidence < settings.MIN_STRUCTURE_CONFIDENCE:
+                response.errors.append(f"low_confidence: Structure extraction confidence ({extracted_structure.structure_confidence}) is too low.")
+                # We still allow it to continue if confidence is just a bit low? 
+                # No, better to be strict as per roadmap.
+                return self._finalize(response, start_time)
+
         except Exception as e:
             response.errors.append(f"extractor_failed: {str(e)}")
             return self._finalize(response, start_time)
@@ -63,6 +75,3 @@ class Pipeline:
     def _finalize(self, response: AnalysisResponse, start_time: float) -> AnalysisResponse:
         response.latency_ms = int((time.time() - start_time) * 1000)
         return response
-
-# Note: We create Pipeline instances within the request lifecycle 
-# because it requires a DB session.

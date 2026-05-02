@@ -16,8 +16,16 @@ class Extractor:
         schema_info = (
             "JSON SCHEMA:\n"
             "{\n"
+            "  \"is_scientific\": boolean,\n"
+            "  \"structure_confidence\": float (0.0 to 1.0),\n"
+            "  \"rejection_reason\": \"string (only if is_scientific is false)\",\n"
             "  \"objective\": \"string\",\n"
-            "  \"variables\": [\"string\"],\n"
+            "  \"variable_roles\": {\n"
+            "    \"state\": [\"string\"],\n"
+            "    \"control\": [\"string\"],\n"
+            "    \"noise\": [\"string\"],\n"
+            "    \"parameters\": [\"string\"]\n"
+            "  },\n"
             "  \"constraints\": [\"string\"],\n"
             "  \"system_type\": \"deterministic\" | \"stochastic\" | \"hybrid\",\n"
             "  \"equation_form\": \"string\",\n"
@@ -32,7 +40,19 @@ class Extractor:
             "Your goal is to extract the underlying mathematical and system structure "
             "from a researcher's problem description.\n\n"
             f"{schema_info}\n\n"
-            "CRITICAL: Use ONLY the allowed values for literal fields. Return ONLY valid JSON."
+            "CRITICAL RULES:\n"
+            "1. GATEKEEPER: If the input is nonsense, purely poetic, or does not describe a "
+            "scientific/engineering problem, set is_scientific to false and provide a rejection_reason.\n"
+            "2. VARIABLE ROLES:\n"
+            "   - state: internal variables that define the system's condition.\n"
+            "   - control: variables the user can change to influence the outcome.\n"
+            "   - noise: unpredictable elements or stochastic variables.\n"
+            "   - parameters: constant values that define the system's behavior.\n"
+            "3. LITERALS:\n"
+            "   - system_type MUST be one of: [deterministic, stochastic, hybrid]\n"
+            "   - optimization_type MUST be one of: [min, max, equilibrium, unknown]\n"
+            "   - problem_class MUST be one of: [differential equation, optimization, inference, simulation]\n"
+            "4. Return ONLY valid JSON."
         )
         
         user_prompt = f"Problem description: {input_text}\n\nReturn structure JSON:"
@@ -55,10 +75,15 @@ class Extractor:
                 {"role": "user", "content": user_prompt}
             ],
             model=self.model,
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            temperature=0
         )
         
         response_json = json.loads(chat_completion.choices[0].message.content)
+        # Handle cases where optional fields might be missing if LLM fails to include them
+        if "variable_roles" not in response_json:
+            response_json["variable_roles"] = {"state": [], "control": [], "noise": [], "parameters": []}
+            
         return ExtractedStructure(**response_json)
 
 # Singleton instance

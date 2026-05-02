@@ -1,0 +1,211 @@
+ISOMORPH BACKEND EVALUATION REPORT
+Timestamp: 20260425_133801
+Pipeline Version: v0.1
+============================================================
+
+CASE G001: Materials Science -> biology
+INPUT: Crack propagation in composite ceramics under variable thermal stress.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 3972.17ms
+CONFIDENCE: 0.79
+FOUND: 5 analogies
+
+  1. Geomechanical Modeling (0.85)
+     Origin: Geophysical Inversion, Seismic Imaging, and Subsurface Modeling
+     Variable Mapping: {'thermal stress': 'tectonic stress', 'ceramic composition': 'rock properties', 'temperature': 'thermal gradient'}
+     Failure Conditions: inaccurate material modeling, insufficient boundary condition data...
+
+  2. Crank-Nicolson (Finance) (0.70)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'thermal stress': 'volatility', 'ceramic composition': 'asset portfolio', 'temperature': 'time'}
+     Failure Conditions: inadequate handling of non-linear material properties, insufficient consideration of thermal stress variability...
+
+  3. Mixture Model (Fluid) (0.70)
+     Origin: Computational Fluid Dynamics, Multiphase Flow, and Aerodynamics
+     Variable Mapping: {'thermal stress': 'pressure gradient', 'ceramic composition': 'fluid composition', 'temperature': 'temperature'}
+     Failure Conditions: inadequate material modeling, insufficient boundary condition specification...
+
+  4. Cohesive Zone Modeling (0.85)
+     Origin: Structural Engineering, Failure Mechanics, and Materials Science
+     Variable Mapping: {'thermal stress': 'traction', 'ceramic composition': 'material properties', 'temperature': 'environmental condition'}
+     Failure Conditions: excessive deformation, interface debonding...
+
+  5. Boundary Element Meth. (0.85)
+     Origin: Structural Engineering, Failure Mechanics, and Materials Science
+     Variable Mapping: {'thermal stress': 'traction', 'ceramic composition': 'material properties', 'temperature': 'environmental condition'}
+     Failure Conditions: inaccurate material modeling, insufficient boundary condition specification...
+
+
+============================================================
+
+CASE G002: Biotech -> Engineering
+INPUT: Optimizing nutrient uptake in a bioreactor with non-Newtonian fluid dynamics.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 4505.97ms
+CONFIDENCE: 0.75
+FOUND: 5 analogies
+
+  1. Metabolic flux analysis (0.70)
+     Origin: Systems Biology, Metabolic Engineering, and Gene Networks
+     Variable Mapping: {'nutrient concentration': 'metabolic flux', 'fluid flow rate': 'reaction rate', 'bioreactor temperature': 'environmental condition'}
+     Failure Conditions: inability to linearize system dynamics, insufficient data for constraint formulation...
+
+  2. Euler-Lagrange Model (0.80)
+     Origin: Computational Fluid Dynamics, Multiphase Flow, and Aerodynamics
+     Variable Mapping: {'nutrient concentration': 'particle density', 'fluid flow rate': 'grid velocity', 'bioreactor temperature': 'ambient temperature'}
+     Failure Conditions: inability to capture non-Newtonian effects, insufficient grid resolution, inaccurate particle modeling...
+
+  3. 4D-Var Assimilation (0.80)
+     Origin: Climate Science, Teleconnections, and Downscaling
+     Variable Mapping: {'nutrient concentration': 'state variable', 'fluid flow rate': 'process variable', 'bioreactor temperature': 'forcing variable'}
+     Failure Conditions: inadequate representation of non-Newtonian effects, insufficient observational data...
+
+  4. Enzyme Inhibition (0.72)
+     Origin: Systems Biology, Metabolic Engineering, and Gene Networks
+     Variable Mapping: {'nutrient concentration': 'substrate concentration', 'fluid flow rate': 'enzyme activity', 'bioreactor temperature': 'reaction temperature'}
+     Failure Conditions: inaccurate modeling of non-Newtonian fluid dynamics, insufficient consideration of nutrient availability...
+
+  5. Reservoir Simulation (0.72)
+     Origin: Geophysical Inversion, Seismic Imaging, and Subsurface Modeling
+     Variable Mapping: {'nutrient concentration': 'fluid saturation', 'fluid flow rate': 'Darcy velocity', 'bioreactor temperature': 'thermal conductivity'}
+     Failure Conditions: inability to capture complex fluid dynamics, insufficient grid resolution, inaccurate parameter estimation...
+
+
+============================================================
+
+CASE G003: Economics -> Ecology
+INPUT: Modeling market volatility using stochastic differential equations during a liquidity crisis.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 3403.52ms
+CONFIDENCE: 0.84
+FOUND: 5 analogies
+
+  1. Heston Volatility (0.85)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'stock prices': 'v', 'trading volume': 'not directly mapped', 'market indices': 'not directly mapped'}
+     Failure Conditions: inability to accurately model liquidity crisis conditions, insufficient data for parameter estimation...
+
+  2. Monte Carlo Pricing (0.80)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'stock prices': 'asset price', 'trading volume': 'transaction volume', 'market indices': 'market benchmark'}
+     Failure Conditions: inadequate risk modeling, insufficient computational resources...
+
+  3. Vasicek Interest Mod. (0.85)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'stock prices': 'r', 'trading volume': 'not directly mapped', 'market indices': 'not directly mapped'}
+     Failure Conditions: inability to capture complex interactions between variables, oversimplification of liquidity crisis conditions...
+
+  4. Hull-White Model (0.85)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'stock prices': 'r', 'trading volume': 'not directly mapped', 'market indices': 'not directly mapped'}
+     Failure Conditions: inability to accurately model 	heta(t), insufficient data for sigma...
+
+  5. Jump-Diffusion (Merton) (0.85)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'stock prices': 'S', 'trading volume': 'not directly mapped', 'market indices': 'not directly mapped'}
+     Failure Conditions: inability to accurately model jump sizes, inadequate estimation of lambda...
+
+
+============================================================
+
+CASE S001: The Impossible Mix
+INPUT: Analyzing the quantum entanglement of social media sentiment clusters in a 5D manifold with relativistic constraints.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 3672.66ms
+CONFIDENCE: 0.80
+FOUND: 5 analogies
+
+  1. Coupled Cluster (CCSD) (0.85)
+     Origin: Quantum Chemistry, Many-Body Physics, and Tensor Networks
+     Variable Mapping: {'sentiment clusters': 'many-body system', '5D manifold coordinates': 'configuration space', 'relativistic constraints': 'Hamiltonian operator'}
+     Failure Conditions: inability to model relativistic effects, insufficient computational resources...
+
+  2. Slater Determinant (0.85)
+     Origin: Quantum Chemistry, Many-Body Physics, and Tensor Networks
+     Variable Mapping: {'sentiment clusters': 'electronic wave functions', '5D manifold coordinates': 'orbital coordinates', 'relativistic constraints': 'Pauli exclusion principle'}
+     Failure Conditions: inability to model non-antisymmetric interactions, insufficient computational resources for large-scale sentiment cluster analysis...
+
+  3. WKB Approximation (0.85)
+     Origin: Quantum Chemistry, Many-Body Physics, and Tensor Networks
+     Variable Mapping: {'sentiment clusters': 'quantum states', '5D manifold coordinates': 'configuration space', 'relativistic constraints': 'Hamiltonian constraints'}
+     Failure Conditions: inapplicability of semi-classical approximation, insufficient computational resources for high-dimensional calculations...
+
+  4. SMILES Transformer (0.62)
+     Origin: Pharmaceutical Informatics, ADMET, and Binding Kinetics
+     Variable Mapping: {'sentiment clusters': 'molecular structures', '5D manifold coordinates': 'high-dimensional chemical descriptors', 'relativistic constraints': 'physicochemical constraints'}
+     Failure Conditions: inability to capture quantum superposition, insufficient handling of non-Euclidean manifold geometry...
+
+  5. Second Quantization (0.85)
+     Origin: Quantum Chemistry, Many-Body Physics, and Tensor Networks
+     Variable Mapping: {'sentiment clusters': 'quantum states', '5D manifold coordinates': 'configuration space', 'relativistic constraints': 'gauge symmetries'}
+     Failure Conditions: inability to define a suitable Fock space, non-integrable many-body interactions...
+
+
+============================================================
+
+CASE S002: Extreme Constraint Density
+INPUT: Solve for the equilibrium of 500 mutually exclusive agent constraints in a zero-sum resource allocation problem where the budget is a moving target influenced by lunar cycles.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 3902.08ms
+CONFIDENCE: 0.77
+FOUND: 5 analogies
+
+  1. 4D-Var Assimilation (0.85)
+     Origin: Climate Science, Teleconnections, and Downscaling
+     Variable Mapping: {'agent_constraints': 'y', 'resource_allocation': 'x', 'budget': 'h(x)'}
+     Failure Conditions: inability to model lunar cycle influence as an external forcing, insufficient computational resources for 500 agent constraints...
+
+  2. Lattice Optimization (0.72)
+     Origin: Structural Engineering, Failure Mechanics, and Materials Science
+     Variable Mapping: {'agent_constraints': 'truss_members', 'resource_allocation': 'load_distribution', 'budget': 'material_volume'}
+     Failure Conditions: infeasible resource allocation, unstable equilibrium...
+
+  3. Multi-stage Extraction (0.85)
+     Origin: Chemical Engineering, Process Systems, and Reaction Kinetics
+     Variable Mapping: {'agent_constraints': 'reaction_pathways', 'resource_allocation': 'reactant_distribution', 'budget': 'catalyst_availability'}
+     Failure Conditions: inability to model lunar cycle influence as periodic boundary conditions, insufficient computational resources for large-scale agent constraints...
+
+  4. Kelly Criterion (0.72)
+     Origin: Quantitative Finance, Risk Management, and Stochastic Control
+     Variable Mapping: {'agent_constraints': 'betting fractions', 'resource_allocation': 'investment portfolio', 'budget': 'bankroll'}
+     Failure Conditions: inability to model lunar cycle influence, insufficient data for parameter estimation...
+
+  5. Topology Optimization (0.72)
+     Origin: Structural Engineering, Failure Mechanics, and Materials Science
+     Variable Mapping: {'agent_constraints': 'V_i', 'resource_allocation': 'mathbf{u}', 'budget': 'V^*'}
+     Failure Conditions: non-convexity of the objective function, high dimensionality of the variable space...
+
+
+============================================================
+
+CASE S003: Vague/Poetic Input
+INPUT: The way the light dances on the water reminds me of how my data looks when it's broken.
+----------------------------------------
+STATUS: SUCCESS
+LATENCY: 15904.29ms
+CONFIDENCE: 0.60
+FOUND: 3 analogies
+
+  1. In-house Transfer Learning (0.60)
+     Origin: Pharmaceutical Informatics, ADMET, and Binding Kinetics
+     Variable Mapping: {'data': 'D_{int}', 'broken data pattern': '\theta_{new}'}
+     Failure Conditions: insufficient data, poor model generalization...
+
+  2. HMM (Bioinformatics) (0.60)
+     Origin: Systems Biology, Metabolic Engineering, and Gene Networks
+     Variable Mapping: {'data': 'observation_sequence', 'pattern': 'hidden_state'}
+     Failure Conditions: insufficient data, high dimensionality...
+
+  3. Neural-Symbolic ML (0.60)
+     Origin: Pharmaceutical Informatics, ADMET, and Binding Kinetics
+     Variable Mapping: {'data patterns': 'neural network inputs', 'broken data': 'anomalous patterns'}
+     Failure Conditions: insufficient training data, inadequate rule-based constraints...
+
+
+============================================================
+

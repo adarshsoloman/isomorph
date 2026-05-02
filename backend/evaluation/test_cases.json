@@ -1,0 +1,49 @@
+
+{
+  "golden_cases": [
+    {
+      "id": "G001",
+      "name": "Materials Science -> biology",
+      "description": "Crack propagation in composite ceramics under variable thermal stress.",
+      "expected_domains": ["Biology", "Fluid Dynamics", "Statistical Physics"],
+      "focus": "Structural isomorphism of failure points"
+    },
+    {
+      "id": "G002",
+      "name": "Biotech -> Engineering",
+      "description": "Optimizing nutrient uptake in a bioreactor with non-Newtonian fluid dynamics.",
+      "expected_domains": ["Chemical Engineering", "Logistics", "Aerodynamics"],
+      "focus": "Flow optimization and boundary layers"
+    },
+    {
+      "id": "G003",
+      "name": "Economics -> Ecology",
+      "description": "Modeling market volatility using stochastic differential equations during a liquidity crisis.",
+      "expected_domains": ["Ecology", "Neuroscience", "Meteorology"],
+      "focus": "Stochastic stability and phase transitions"
+    }
+  ],
+  "stress_cases": [
+    {
+      "id": "S001",
+      "name": "The Impossible Mix",
+      "description": "Analyzing the quantum entanglement of social media sentiment clusters in a 5D manifold with relativistic constraints.",
+      "reasoning": "Checks if the Extractor hallucinates math that doesn't exist or handles nonsense gracefully.",
+      "type": "Hallucination Check"
+    },
+    {
+      "id": "S002",
+      "name": "Extreme Constraint Density",
+      "description": "Solve for the equilibrium of 500 mutually exclusive agent constraints in a zero-sum resource allocation problem where the budget is a moving target influenced by lunar cycles.",
+      "reasoning": "Tests the Scorer's ability to map a high volume of constraints without losing focus.",
+      "type": "Complexity Stress"
+    },
+    {
+      "id": "S003",
+      "name": "Vague/Poetic Input",
+      "description": "The way the light dances on the water reminds me of how my data looks when it's broken.",
+      "reasoning": "Tests the Validator and Extractor's ability to reject non-scientific/non-mathematical input.",
+      "type": "Safety/Rejection Check"
+    }
+  ]
+}

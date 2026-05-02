@@ -16,6 +16,8 @@ class Settings(BaseSettings):
 
     # External APIs
     GROQ_API_KEY: str = Field(..., env="GROQ_API_KEY")
+    OLLAMA_BASE_URL: str = "http://localhost:11434"
+    EMBEDDING_MODEL: str = "nomic-embed-text:v1.5"
 
     # Redis Cache
     REDIS_HOST: str = "localhost"
@@ -23,6 +25,7 @@ class Settings(BaseSettings):
 
     # Constants
     MIN_SIMILARITY_SCORE: float = 0.6
+    MIN_STRUCTURE_CONFIDENCE: float = 0.5
     CACHE_TTL: int = 3600
 
     model_config = SettingsConfigDict(

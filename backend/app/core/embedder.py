@@ -1,15 +1,25 @@
-from sentence_transformers import SentenceTransformer
-import numpy as np
+import httpx
 from typing import List
+from ..config import settings
 
 class Embedder:
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
-        self.model = SentenceTransformer(model_name)
+    def __init__(self):
+        self.model_name = settings.EMBEDDING_MODEL
+        self.base_url = f"{settings.OLLAMA_BASE_URL}/api/embeddings"
 
     def embed_text(self, text: str) -> List[float]:
-        """Generate a vector for a single string."""
-        embedding = self.model.encode(text)
-        return embedding.tolist()
+        """Generate a vector for a single string using Ollama."""
+        try:
+            response = httpx.post(
+                self.base_url,
+                json={"model": self.model_name, "prompt": text},
+                timeout=30.0
+            )
+            response.raise_for_status()
+            return response.json()["embedding"]
+        except Exception as e:
+            print(f"Ollama embedding failed: {e}")
+            raise
 
     def embed_structure(self, structure_dict: dict) -> List[float]:
         """
